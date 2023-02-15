@@ -8,3 +8,4 @@ export const searchProductUrl: string =
 export const cartUrl: string =
   "https://helion.pl/zakupy/";
 export const usersUrl: string = "https://helion.pl/users/";
+export const registerUrl: string = "https://helion.pl/users/rejestracja.cgi";

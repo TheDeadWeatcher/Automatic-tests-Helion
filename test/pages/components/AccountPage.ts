@@ -23,11 +23,44 @@ class UserPage {
     return $("input[name='loginemail']");
   }
 
-  get labelErrorMessage (){
+  get yourPasswordInput() {
+    return $("input[name='haslo']");
+  }
+
+  get labelErrorMessage() {
     return $("p label.error");
   }
 
-  async getLabelErrorMessage ():Promise<string>{
+  get alertTextIncorrectLogin() {
+    return $("div.checkbox-line h4");
+  }
+
+  async ClickOnRegisterBtn (){
+    const btn:WebdriverIO.Element = await this.registerBtn;
+    await btn.waitForDisplayed();
+    await btn.click();
+  }
+
+  async getLoginIncorrectText (): Promise<string>{
+    const text:WebdriverIO.Element = await this.alertTextIncorrectLogin;
+    await text.waitForDisplayed();
+    return await text.getText();
+    
+  }
+
+  async typePhrasePasswordInput(value: string) {
+    const input: WebdriverIO.Element = await this.yourPasswordInput;
+    await input.waitForDisplayed();
+    await input.setValue(value);
+  }
+
+  async clearEmailInput() {
+    const input: WebdriverIO.Element = await this.yourEmailInput;
+    await input.waitForDisplayed();
+    await input.clearValue();
+  }
+
+  async getLabelErrorMessage(): Promise<string> {
     const label: WebdriverIO.Element = await this.labelErrorMessage;
     await label.waitForDisplayed();
     return await label.getText();
