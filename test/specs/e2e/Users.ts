@@ -4,7 +4,7 @@ import { helionHomeUrl, registerUrl } from "../../config/pagesUrl";
 import { incorrectPhrase, labelErrorMessage, fictionalEmail, fictionalPassword, alertTextUser, registerTitle } from "../../config/data";
 import RegisterPage from "../../pages/components/RegisterPage";
 
-describe("Users - account panel verification", async ()=>{
+describe("E2E-User", async ()=>{
     it("Should open and verify url of home page Helion, verify url and verify visible of account btn", async()=>{
         await GlobalPage.openPage(helionHomeUrl, helionHomeUrl);
         await GlobalPage.rodoAkcept();
