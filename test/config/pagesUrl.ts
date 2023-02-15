@@ -7,3 +7,4 @@ export const searchProductUrl: string =
     "https://helion.pl/search?qa=&serwisyall=&szukaj=testowanie+oprogramowania&wprzed=&wprzyg=&wsprzed=&wyczerp=";
 export const cartUrl: string =
   "https://helion.pl/zakupy/";
+export const usersUrl: string = "https://helion.pl/users/";

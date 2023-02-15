@@ -36,9 +36,13 @@ export const config: Options.Testrunner = {
   ],
 
   suites: {
-    debug: ["./test/specs/e2e/Product.ts"],
+    debug: ["./test/specs/e2e/Users.ts"],
 
-    e2e: ["./test/specs/e2e/SearchBar.ts", "./test/specs/e2e/Product.ts"],
+    e2e: [
+      "./test/specs/e2e/SearchBar.ts",
+      "./test/specs/e2e/Product.ts",
+      "./test/specs/e2e/Users.ts",
+    ],
   },
   //
   // ============
@@ -70,9 +74,9 @@ export const config: Options.Testrunner = {
       maxInstances: 1,
       //
       browserName: "chrome",
-      "goog:chromeOptions": {
-        args: ["--headless"],
-      },
+      // "goog:chromeOptions": {
+      //   args: ["--headless"],
+      // },
       acceptInsecureCerts: true,
       // If outputDir is provided WebdriverIO can capture driver session logs
       // it is possible to configure which logTypes to include/exclude.
@@ -157,8 +161,8 @@ export const config: Options.Testrunner = {
         outputDir: "allure-results",
         disableWebdriverStepsReporting: true,
         disableWebdriverScreenshotsReporting: false,
-      }
-    ]
+      },
+    ],
   ],
 
   //
@@ -273,11 +277,11 @@ export const config: Options.Testrunner = {
   // afterSuite: function (suite) {
   // },
 
-  afterTest:  function (test, scenario, { error, duration, passed } )  {
-  if (error) {
-     browser.takeScreenshot();
-  }
-},
+  afterTest: function (test, scenario, { error, duration, passed }) {
+    if (error) {
+      browser.takeScreenshot();
+    }
+  },
   /**
    * Runs after a WebdriverIO command gets executed
    * @param {String} commandName hook command name
